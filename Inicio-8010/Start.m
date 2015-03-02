@@ -10,6 +10,7 @@
 
 NSArray         *aFixArray;
 NSMutableArray  *maMsgs;
+NSMutableArray  *maImgs;
 
 NSString        *stInitialMsg;
 int             iCounter = 0;
@@ -24,10 +25,9 @@ int             iCounter = 0;
     [super viewDidLoad];
     stInitialMsg        = @"Ya casi es hora de dormir";
     self.lblMsg.text    = stInitialMsg;
+    self.imgUser.image  = [UIImage imageNamed:@"abraham.png"];
     self.lblMsg.adjustsFontSizeToFitWidth =  YES;
     
-    //UILabel *lbl1 = [[UILabel alloc] init];
-
     maMsgs = [[NSMutableArray alloc] init];
     [maMsgs addObject:[NSString stringWithFormat:@"Soy un iPhone"]];
     [maMsgs addObject:[NSString stringWithFormat:@"Soy Edgar Lopez"]];
@@ -35,6 +35,14 @@ int             iCounter = 0;
     [maMsgs addObject:[NSString stringWithFormat:@"Soy Martin Flores"]];
     [maMsgs addObject:[NSString stringWithFormat:@"Soy Malu Galindo"]];
     [maMsgs addObject:[NSString stringWithFormat:@"Soy Batman"]];
+    
+    maImgs = [[NSMutableArray alloc] init];
+    [maImgs addObject:[NSString stringWithFormat:@"iphone.png"]];
+    [maImgs addObject:[NSString stringWithFormat:@"bart.png"]];
+    [maImgs addObject:[NSString stringWithFormat:@"lisa.png"]];
+    [maImgs addObject:[NSString stringWithFormat:@"homer.png"]];
+    [maImgs addObject:[NSString stringWithFormat:@"marge.png"]];
+    [maImgs addObject:[NSString stringWithFormat:@"batman.jpg"]];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -47,12 +55,14 @@ int             iCounter = 0;
     if (iCounter < maMsgs.count)
     {
         self.lblMsg.text    = maMsgs[iCounter];
+        self.imgUser.image  = [UIImage imageNamed:maImgs[iCounter]];
         iCounter++;
     }
     else
     {
         iCounter    = 0;
         self.lblMsg.text    = @"Fin";
+        self.imgUser.image = [UIImage imageNamed:@"maggie.png"];
     }
 }
 @end

@@ -31,10 +31,15 @@
                                     <action selector="btnChangeMsgPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UjZ-8c-BNC"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="YXm-f1-9S7" userLabel="imgUser">
+                                <rect key="frame" x="80" y="63" width="160" height="160"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="imgUser" destination="YXm-f1-9S7" id="D7I-Ex-4Qz"/>
                         <outlet property="lblMsg" destination="3at-rP-gKU" id="I1I-1U-gEe"/>
                     </connections>
                 </viewController>
