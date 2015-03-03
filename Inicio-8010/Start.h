@@ -18,6 +18,8 @@
 
 //Actions
 - (IBAction)btnChangeMsgPressed:(id)sender;
+- (IBAction)btnNextPressed:(id)sender;
+- (IBAction)btnScreen2Pressed:(id)sender;
 
 @end
 
