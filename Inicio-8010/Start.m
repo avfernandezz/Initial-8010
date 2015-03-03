@@ -7,6 +7,8 @@
 //
 
 #import "Start.h"
+#import "Screen01.h"
+#import "Screen02.h"
 
 NSArray         *aFixArray;
 NSMutableArray  *maMsgs;
@@ -14,6 +16,8 @@ NSMutableArray  *maImgs;
 
 NSString        *stInitialMsg;
 int             iCounter = 0;
+
+UIStoryboard    *mstoryboard;
 
 @interface Start ()
 
@@ -23,6 +27,7 @@ int             iCounter = 0;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    mstoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     stInitialMsg        = @"Ya casi es hora de dormir";
     self.lblMsg.text    = stInitialMsg;
     self.imgUser.image  = [UIImage imageNamed:@"abraham.png"];
@@ -64,5 +69,32 @@ int             iCounter = 0;
         self.lblMsg.text    = @"Fin";
         self.imgUser.image = [UIImage imageNamed:@"maggie.png"];
     }
+}
+
+- (IBAction)btnNextPressed:(id)sender
+{
+    NSLog(@"btnNextPressed");
+    
+    /*
+    [self performSegueWithIdentifier:@"SegueToScreen01" sender:self];
+    Screen01 *vc = [mstoryboard instantiateViewControllerWithIdentifier:@"Screen01"];
+    [self.navigationController pushViewController: vc animated:YES];
+    
+ 
+    Screen01 *myController = [self.storyboard instantiateViewControllerWithIdentifier:@"Screen01"];
+    [self.navigationController pushViewController: myController animated:YES];
+    
+    
+    Screen01 *newViewController = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"Screen01"];
+    [self.navigationController pushViewController:newViewController animated:YES];*/
+    
+    /*Screen01 *newViewController = [[Screen01 alloc] init];
+    [self.navigationController pushViewController:newViewController animated:YES];*/
+}
+
+- (IBAction)btnScreen2Pressed:(id)sender
+{
+    Screen02 *newViewController = [[Screen02 alloc] init];
+    [self presentViewController:newViewController animated:YES completion:nil];
 }
 @end
